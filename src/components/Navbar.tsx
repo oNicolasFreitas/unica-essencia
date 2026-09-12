@@ -26,19 +26,19 @@ export function Navbar() {
   }, [open])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 enter enter-1">
+    <header className={`absolute md:fixed inset-x-0 top-0 z-50 enter enter-1 transition-colors duration-300 ${scrolled ? 'bg-cacau/90 backdrop-blur-md' : ''}`}>
       <nav
         aria-label="Principal"
-        className={`mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5 sm:px-8 lg:px-12 transition-colors duration-500 ease-out`}
+        className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5 sm:px-8 lg:px-12"
       >
         <a href="#top" className="pressable flex items-center gap-3" aria-label="Única Essência — início">
           <img src="/img/logo.png" alt="" width={44} height={44} className="h-11 w-11 object-contain" />
-          <span className="font-display text-[0.95rem] tracking-[0.22em] uppercase pt-[3px] text-marfim">
+          <span className="whitespace-nowrap font-display text-[0.95rem] tracking-[0.22em] uppercase pt-[3px] text-marfim">
             Única Essência
           </span>
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-8 lg:flex">
           {nav.map((l) => (
             <li key={l.href}>
               <a
@@ -66,7 +66,7 @@ export function Navbar() {
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={open}
             aria-controls="menu-mobile"
-            className="pressable relative z-[60] grid h-11 w-11 place-items-center rounded-full liquid-glass liquid-glass--dark text-marfim md:hidden"
+            className="pressable relative z-[60] grid h-11 w-11 place-items-center rounded-full liquid-glass liquid-glass--dark text-marfim lg:hidden"
           >
             <Menu
               strokeWidth={1.5}
@@ -85,10 +85,13 @@ export function Navbar() {
       {/* Menu mobile: drawer da direita */}
       <div
         id="menu-mobile"
-        aria-hidden={!open}
-        className={`fixed inset-0 z-[55] md:hidden ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        inert={!open}
+        className={`fixed inset-0 z-[55] lg:hidden ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
-        <div
+        <button
+          type="button"
+          aria-label="Fechar menu"
+          tabIndex={-1}
           onClick={() => setOpen(false)}
           className={`absolute inset-0 bg-cacau/60 backdrop-blur-sm transition-opacity duration-500 ease-out ${open ? 'opacity-100' : 'opacity-0'}`}
         />

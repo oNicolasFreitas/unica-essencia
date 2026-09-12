@@ -24,19 +24,19 @@ export function BarraFixa() {
 
   return (
     <div
-      aria-hidden={!show}
+      inert={!show}
       className={`fixed inset-x-0 bottom-0 z-40 px-4 pb-[max(1rem,env(safe-area-inset-bottom))] transition-[transform,opacity] duration-500 ease-out ${
         show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-6 opacity-0'
       }`}
     >
-      <div className="liquid-glass liquid-glass--dark mx-auto flex max-w-2xl items-center justify-between gap-4 rounded-full py-2 pl-6 pr-2 text-marfim">
+      <div className="liquid-glass liquid-glass--dark mx-auto flex max-w-2xl items-center justify-between gap-4 rounded-full py-1.5 pl-6 pr-2 text-marfim">
         <p className="relative z-[1] min-w-0 truncate text-sm">
           <strong className="font-medium">{evento.data}</strong>
           <span className="hidden sm:inline text-marfim/70"> · {evento.lugares} lugares · a partir de {evento.parcelaMin}</span>
         </p>
         <a
           href="#ingressos"
-          className="pressable relative z-[1] inline-flex shrink-0 items-center rounded-full bg-marfim px-5 py-3 text-sm font-medium text-vinho transition-colors duration-300 hover:bg-nude"
+          className="pressable relative z-[1] inline-flex shrink-0 items-center rounded-full bg-marfim px-5 py-2.5 text-sm font-medium text-vinho transition-colors duration-300 hover:bg-nude"
         >
           Garantir vaga
         </a>

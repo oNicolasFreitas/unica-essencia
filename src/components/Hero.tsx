@@ -21,6 +21,7 @@ function useIsDesktop() {
  */
 export function Hero() {
   const desktop = useIsDesktop()
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   return (
     <section id="top" className="relative isolate flex min-h-[100dvh] items-end overflow-hidden bg-cacau text-marfim">
       {/* Fundo ambiente (desktop) */}
@@ -37,7 +38,7 @@ export function Hero() {
           className="absolute inset-0 -z-10 h-full w-full object-cover"
           src="/video/hero.mp4"
           poster="/video/hero.jpg"
-          autoPlay
+          autoPlay={!reduced}
           muted
           loop
           playsInline
@@ -89,7 +90,7 @@ export function Hero() {
                 className="h-full w-full object-cover"
                 src="/video/hero.mp4"
                 poster="/video/hero.jpg"
-                autoPlay
+                autoPlay={!reduced}
                 muted
                 loop
                 playsInline

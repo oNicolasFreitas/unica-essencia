@@ -4,11 +4,11 @@
    comercial existirem. Nada mais precisa mudar no projeto.
    ═══════════════════════════════════════════════════════════ */
 export const CHECKOUT = {
-  essencial: '', /* ex.: https://www.asaas.com/c/xxxxxxxx */
-  unica: '',     /* ex.: https://www.asaas.com/c/yyyyyyyy */
+  essencial: '', // AVISO: placeholder — substituir por dado real (ex.: https://www.asaas.com/c/xxxxxxxx)
+  unica: '',     // AVISO: placeholder — substituir por dado real (ex.: https://www.asaas.com/c/yyyyyyyy)
 }
 
-export const WHATSAPP = '' /* ex.: 5547999999999 */
+export const WHATSAPP = '' // AVISO: placeholder — substituir por dado real (ex.: 5547999999999)
 
 const WHATSAPP_MSG = 'Quero tirar uma dúvida sobre a Única Essência.'
 
@@ -17,7 +17,7 @@ export function whatsappHref() {
 }
 
 export function checkoutHref(lote: keyof typeof CHECKOUT) {
-  return CHECKOUT[lote] || '#'
+  return CHECKOUT[lote] || '#duvida'
 }
 
 /** Atributos de link externo só quando o destino existe. */

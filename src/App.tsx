@@ -18,7 +18,7 @@ export default function App() {
     <>
       <Navbar />
       <FioDourado />
-      <main>
+      <main className="pb-24">
         <Hero />
         <Espelho />
         <PorQueEu />
