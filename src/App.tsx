@@ -5,34 +5,29 @@ import { FioDourado } from './components/FioDourado'
 import { BarraFixa } from './components/BarraFixa'
 import { Espelho } from './components/Espelho'
 import { PorQueEu } from './components/PorQueEu'
-import { OQueE, TresObjetos } from './components/OQueE'
-import { OQueFica, ParaQuem } from './components/OQueFica'
+import { ODia } from './components/ODia'
+import { ParaQuem } from './components/ParaQuem'
 import { QuemConduz } from './components/QuemConduz'
-import { ComoFunciona, Prazo } from './components/ComoFunciona'
 import { Ingressos, OEncontro } from './components/Ingressos'
-import { FAQ, Duvida, Fechamento, Footer } from './components/FAQ'
+import { FAQ, Fechamento, Footer } from './components/FAQ'
 
+/* Fundos em blocos: cacau (hero) → vinho ×2 → cacau ×2 → vinho ×2 → marfim → cacau ×3. */
 export default function App() {
   useReveal()
   return (
     <>
       <Navbar />
       <FioDourado />
-      <main className="pb-24">
+      <main className="pb-24 md:pb-0">
         <Hero />
         <Espelho />
         <PorQueEu />
-        <OQueE />
-        <TresObjetos />
-        <OQueFica />
+        <ODia />
         <ParaQuem />
         <QuemConduz />
-        <ComoFunciona />
-        <Prazo />
-        <Ingressos />
         <OEncontro />
+        <Ingressos />
         <FAQ />
-        <Duvida />
         <Fechamento />
       </main>
       <Footer />

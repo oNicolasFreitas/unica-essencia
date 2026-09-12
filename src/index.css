@@ -6,7 +6,7 @@
    ÚNICA ESSÊNCIA · v4 (Nicolas Mode · Cinematográfica vinho)
    Paleta: os 8 hexes oficiais da cliente. Nada fora da lista;
    derivações só por opacidade.
-   Escala tipográfica: razão 1.25 a partir de 17px.
+   Escala tipográfica e z-index: tailwind.config.js.
    ────────────────────────────────────────────────────────── */
 :root {
   --vinho: #5a2731;
@@ -17,31 +17,17 @@
   --dourado: #c9a46a;
   --marfim: #f7f1e9;
   --cacau: #302326;
-
-  --t-micro: 0.72rem;
-  --t-sm: 0.9rem;
-  --t-base: 1.0625rem;
-  --t-lg: 1.33rem;
-  --t-deck: clamp(1.4rem, 1.1rem + 1.4vw, 2rem);
-  --t-h2: clamp(2.1rem, 1.4rem + 3.2vw, 3.9rem);
-  --t-h1: clamp(2.4rem, 1.2rem + 3.2vw, 4.2rem);
-  --t-numero: clamp(5rem, 3rem + 10vw, 10rem);
-
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @layer base {
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   html, body { overflow-x: clip; }
-  body {
-    @apply bg-cacau text-marfim font-body antialiased;
-    font-size: var(--t-base);
-    line-height: 1.7;
-  }
+  body { @apply bg-cacau text-marfim font-body text-base antialiased; }
   h1, h2, h3 { @apply font-display font-light; text-wrap: balance; }
-  h1 { font-size: var(--t-h1); line-height: 0.98; letter-spacing: -0.02em; }
-  h2 { font-size: var(--t-h2); line-height: 1.06; letter-spacing: -0.015em; }
-  h3 { font-size: var(--t-lg); line-height: 1.25; letter-spacing: 0; @apply font-normal; }
+  h1 { @apply text-h1; }
+  h2 { @apply text-h2; }
+  h3 { @apply text-lg font-normal; }
   p { text-wrap: pretty; }
   img, video { display: block; max-width: 100%; }
   :focus-visible { outline: 2px solid var(--dourado); outline-offset: 3px; }
@@ -53,25 +39,14 @@
 }
 
 @layer components {
-  .rotulo {
-    @apply font-body uppercase font-medium text-dourado;
-    font-size: var(--t-micro);
-    letter-spacing: 0.32em;
-    text-indent: 0.32em;
-  }
-  .deck {
-    @apply font-display font-light italic;
-    font-size: var(--t-deck);
-    line-height: 1.3;
-    text-wrap: balance;
-  }
+  .deck { @apply font-display font-light italic text-deck; text-wrap: balance; }
   .script { @apply font-script font-normal not-italic text-dourado; font-size: 1.28em; line-height: 0.9; letter-spacing: 0; }
   .prosa { max-width: 62ch; }
   .prosa p + p { margin-top: 1.1em; }
   .pressable { transition: transform 160ms ease-out; }
   .pressable:active { transform: scale(0.97); }
 
-  /* Liquid glass (assinatura) — variante clara e escura */
+  /* Liquid glass (assinatura). O autoprefixer gera o -webkit-. */
   .liquid-glass {
     position: relative; overflow: hidden;
     background: rgba(247, 241, 233, 0.04);
@@ -94,7 +69,6 @@
 }
 
 /* ── Animações de entrada ───────────────────────────────── */
-@keyframes fade-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 @keyframes blur-fade-up { from { opacity: 0; filter: blur(18px); transform: translateY(36px); } to { opacity: 1; filter: blur(0); transform: none; } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -102,8 +76,10 @@
 .enter-1 { animation-delay: .15s } .enter-2 { animation-delay: .35s } .enter-3 { animation-delay: .55s }
 .enter-4 { animation-delay: .75s } .enter-5 { animation-delay: .95s } .enter-6 { animation-delay: 1.15s }
 
-[data-reveal] { opacity: 0; transform: translateY(30px); }
-[data-reveal].is-in { opacity: 1; transform: none; transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+/* Reveal screenshot-safe: parte de um estado visível (deslocado e levemente
+   desfocado), nunca de opacity 0. */
+[data-reveal] { transform: translateY(28px); filter: blur(6px); }
+[data-reveal].is-in { transform: none; filter: blur(0); transition: transform .9s var(--ease-out), filter .9s var(--ease-out); }
 
 .marquee-track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }

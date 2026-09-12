@@ -27,41 +27,32 @@ export function Section({
     <section
       id={id}
       data-tone={tone}
-      className={`relative ${toneClass[tone]} ${tight ? 'py-16 md:py-24' : 'py-20 md:py-32'} px-5 sm:px-8 lg:px-12 ${className}`}
+      className={`relative scroll-mt-20 ${toneClass[tone]} ${tight ? 'py-16 md:py-24' : 'py-20 md:py-32'} px-5 sm:px-8 lg:px-12 ${className}`}
     >
       <div className="relative mx-auto w-full max-w-6xl">{children}</div>
     </section>
   )
 }
 
-export function Rotulo({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return <p className={`rotulo ${className}`}>{children}</p>
-}
-
-/** Cabeçalho de seção: rótulo colado ao H2, lead abaixo. */
+/** Cabeçalho de seção: H2 e, opcionalmente, um lead abaixo. Sem eyebrow. */
 export function Header({
-  rotulo,
   titulo,
   lead,
   center = false,
   max = '20ch',
 }: {
-  rotulo: string
   titulo: ReactNode
   lead?: ReactNode
   center?: boolean
   max?: string
 }) {
   return (
-    <div className={`flex flex-col gap-4 md:gap-5 ${center ? 'items-center text-center' : ''}`}>
-      <Rotulo>
-        <span data-reveal className="inline-block">{rotulo}</span>
-      </Rotulo>
+    <div className={`flex flex-col gap-5 md:gap-6 ${center ? 'items-center text-center' : ''}`}>
       <h2 data-reveal style={{ maxWidth: max }}>
         {titulo}
       </h2>
       {lead && (
-        <div data-reveal className="prosa opacity-80 mt-1 md:mt-2" style={{ maxWidth: '58ch' }}>
+        <div data-reveal className="prosa opacity-85" style={{ maxWidth: '58ch' }}>
           {lead}
         </div>
       )}
@@ -77,7 +68,7 @@ type BtnProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 export function Button({ variant = 'glass', children, className = '', arrow = true, ...rest }: BtnProps) {
   const base =
-    'group pressable inline-flex items-center justify-center gap-2 rounded-full px-7 py-[1.05rem] min-h-[48px] font-body text-[0.95rem] font-medium tracking-wide transition-colors duration-300 ease-out'
+    'group pressable inline-flex items-center justify-center gap-2 rounded-full px-7 py-[1.05rem] min-h-[48px] font-body text-sm font-medium tracking-wide transition-colors duration-300 ease-out'
   const styles: Record<NonNullable<BtnProps['variant']>, string> = {
     glass: 'liquid-glass text-marfim hover:bg-marfim/10',
     solid: 'bg-marfim text-vinho hover:bg-nude',
@@ -88,11 +79,11 @@ export function Button({ variant = 'glass', children, className = '', arrow = tr
   }
   return (
     <a className={`${base} ${styles[variant]} ${className}`} {...rest}>
-      <span className="relative z-[1] leading-none pt-[2px]">{children}</span>
+      <span className="relative z-glass leading-none pt-[2px]">{children}</span>
       {arrow && (
         <ArrowUpRight
           strokeWidth={1.5}
-          className="relative z-[1] h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          className="relative z-glass h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
           aria-hidden
         />
       )}

@@ -4,11 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+export const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 /**
  * Reveal em lote: todo elemento com [data-reveal] entra uma única vez
- * quando cruza 85% do viewport. Irmãos no mesmo lote recebem stagger.
+ * quando cruza 88% do viewport. Stagger com teto de 6 passos.
  */
 export function useReveal() {
   useEffect(() => {
@@ -21,7 +21,7 @@ export function useReveal() {
       once: true,
       onEnter: (batch) => {
         batch.forEach((el, i) => {
-          window.setTimeout(() => el.classList.add('is-in'), i * 90)
+          window.setTimeout(() => el.classList.add('is-in'), Math.min(i, 6) * 90)
         })
       },
     })
@@ -33,7 +33,7 @@ export function useReveal() {
   }, [])
 }
 
-/** Parallax sutil: move o elemento entre -amount e +amount ao cruzar a tela. */
+/** Parallax sutil. O elemento NÃO deve ter data-reveal (a transição de transform colidiria com o scrub). */
 export function useParallax(ref: React.RefObject<HTMLElement | null>, amount = 40) {
   useEffect(() => {
     const el = ref.current
@@ -41,11 +41,7 @@ export function useParallax(ref: React.RefObject<HTMLElement | null>, amount = 4
     const tween = gsap.fromTo(
       el,
       { y: amount },
-      {
-        y: -amount,
-        ease: 'none',
-        scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true },
-      },
+      { y: -amount, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } },
     )
     return () => {
       tween.scrollTrigger?.kill()

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { nav } from '../data/copy'
+import { nav, cta, evento } from '../data/copy'
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -26,16 +26,14 @@ export function Navbar() {
   }, [open])
 
   return (
-    <header className={`absolute md:fixed inset-x-0 top-0 z-50 enter enter-1 transition-colors duration-300 ${scrolled ? 'bg-cacau/90 backdrop-blur-md' : ''}`}>
-      <nav
-        aria-label="Principal"
-        className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5 sm:px-8 lg:px-12"
-      >
-        <a href="#top" className="pressable flex items-center gap-3" aria-label="Única Essência — início">
+    <>
+    <header
+      className={`absolute md:fixed inset-x-0 top-0 ${open ? 'z-topo' : 'z-nav'} enter enter-1 transition-colors duration-300 ${scrolled ? 'bg-cacau/90 backdrop-blur-md' : ''}`}
+    >
+      <nav aria-label="Principal" className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5 sm:px-8 lg:px-12">
+        <a href="#top" className="pressable flex items-center gap-3" aria-label="Única Essência, início">
           <img src="/img/logo.png" alt="" width={44} height={44} className="h-11 w-11 object-contain" />
-          <span className="whitespace-nowrap font-display text-[0.95rem] tracking-[0.22em] uppercase pt-[3px] text-marfim">
-            Única Essência
-          </span>
+          <span className="whitespace-nowrap font-display text-sm tracking-[0.22em] uppercase pt-[3px] text-marfim">Única Essência</span>
         </a>
 
         <ul className="hidden items-center gap-8 lg:flex">
@@ -54,11 +52,9 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="#ingressos"
-            className={`pressable hidden sm:inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-300 ease-out ${
-              scrolled ? 'liquid-glass liquid-glass--dark text-marfim' : 'liquid-glass text-marfim hover:bg-marfim/10'
-            }`}
+            className="pressable hidden sm:inline-flex items-center rounded-full liquid-glass liquid-glass--dark px-5 py-2.5 text-sm font-medium text-marfim transition-colors duration-300 ease-out hover:bg-marfim/10"
           >
-            <span className="relative z-[1] pt-[1px]">Garantir vaga</span>
+            <span className="relative z-glass pt-[1px]">{cta.vaga}</span>
           </a>
           <button
             type="button"
@@ -66,7 +62,7 @@ export function Navbar() {
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={open}
             aria-controls="menu-mobile"
-            className="pressable relative z-[60] grid h-11 w-11 place-items-center rounded-full liquid-glass liquid-glass--dark text-marfim lg:hidden"
+            className="pressable relative z-drawer grid h-11 w-11 place-items-center rounded-full liquid-glass liquid-glass--dark text-marfim lg:hidden"
           >
             <Menu
               strokeWidth={1.5}
@@ -81,13 +77,11 @@ export function Navbar() {
           </button>
         </div>
       </nav>
+    </header>
 
-      {/* Menu mobile: drawer da direita */}
-      <div
-        id="menu-mobile"
-        inert={!open}
-        className={`fixed inset-0 z-[55] lg:hidden ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}
-      >
+      {/* Menu mobile: drawer da direita. Fora do <header> de propósito: o header tem
+          filter/backdrop-filter, que faria o `fixed` do drawer virar relativo a ele. */}
+      <div id="menu-mobile" inert={!open} className={`fixed inset-0 z-drawer lg:hidden ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
         <button
           type="button"
           aria-label="Fechar menu"
@@ -111,7 +105,7 @@ export function Navbar() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="font-display text-3xl font-light text-marfim transition-colors duration-150 hover:text-dourado"
+                  className="font-display text-2xl font-light text-marfim transition-colors duration-150 hover:text-dourado"
                 >
                   {l.label}
                 </a>
@@ -127,12 +121,14 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="pressable flex min-h-[52px] items-center justify-center rounded-full bg-marfim px-6 font-medium text-vinho transition-colors duration-300 hover:bg-nude"
             >
-              Garantir minha vaga
+              {cta.vaga}
             </a>
-            <p className="mt-4 text-center text-sm text-marfim/60">Sábado, 10 de outubro · Balneário Camboriú</p>
+            <p className="mt-4 text-center text-sm text-marfim/70">
+              {evento.data} · {evento.cidade}
+            </p>
           </div>
         </div>
       </div>
-    </header>
+    </>
   )
 }
