@@ -85,7 +85,7 @@ export function Fechamento() {
           <span data-reveal className="inline-block">{fechamento.rotulo}</span>
         </Rotulo>
         <h2 data-reveal className="max-w-[14ch]">
-          Você já adiou <span className="script">esse dia</span> outras vezes.
+          Você já adiou <span className="script whitespace-nowrap">esse dia</span> outras vezes.
         </h2>
         <p data-reveal className="max-w-[44ch] text-marfim/80">{fechamento.texto}</p>
         <div data-reveal>

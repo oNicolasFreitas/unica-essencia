@@ -10,7 +10,7 @@ export function Espelho() {
           <span data-reveal className="inline-block">{espelho.rotulo}</span>
         </Rotulo>
         <h2 data-reveal className="max-w-[18ch]">
-          O que todos veem. <span className="script">E o que ninguém vê.</span>
+          O que todos veem. <span className="script md:whitespace-nowrap">E o que ninguém vê.</span>
         </h2>
       </div>
 
