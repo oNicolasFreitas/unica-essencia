@@ -4,6 +4,7 @@ import { Hero } from './components/Hero'
 import { FioDourado } from './components/FioDourado'
 import { BarraFixa } from './components/BarraFixa'
 import { Espelho } from './components/Espelho'
+import { ResumoIngressos } from './components/ResumoIngressos'
 import { PorQueEu } from './components/PorQueEu'
 import { ODia } from './components/ODia'
 import { ParaQuem } from './components/ParaQuem'
@@ -21,6 +22,7 @@ export default function App() {
       <main className="pb-24 md:pb-0">
         <Hero />
         <Espelho />
+        <ResumoIngressos />
         <PorQueEu />
         <ODia />
         <ParaQuem />

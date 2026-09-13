@@ -8,10 +8,12 @@ export function BarraFixa() {
   useEffect(() => {
     const hero = document.getElementById('top')
     const fim = document.getElementById('fechamento')
+    const ing = document.getElementById('ingressos')
     if (!hero || !('IntersectionObserver' in window)) { setShow(true); return }
     let heroOut = false
     let fimIn = false
-    const update = () => setShow(heroOut && !fimIn)
+    let ingIn = false
+    const update = () => setShow(heroOut && !fimIn && !ingIn)
     const io1 = new IntersectionObserver(([e]) => { heroOut = !e.isIntersecting; update() }, { threshold: 0 })
     io1.observe(hero)
     let io2: IntersectionObserver | undefined
@@ -19,7 +21,12 @@ export function BarraFixa() {
       io2 = new IntersectionObserver(([e]) => { fimIn = e.isIntersecting; update() }, { threshold: 0.2 })
       io2.observe(fim)
     }
-    return () => { io1.disconnect(); io2?.disconnect() }
+    let io3: IntersectionObserver | undefined
+    if (ing) {
+      io3 = new IntersectionObserver(([e]) => { ingIn = e.isIntersecting; update() }, { threshold: 0.05 })
+      io3.observe(ing)
+    }
+    return () => { io1.disconnect(); io2?.disconnect(); io3?.disconnect() }
   }, [])
 
   return (

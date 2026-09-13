@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { Play, Pause } from 'lucide-react'
+import { Dobravel } from './Dobravel'
 import { porQueEu } from '../data/copy'
 import { Section, Header } from './ui'
 import { useParallax } from '../hooks/useReveal'
@@ -10,6 +11,7 @@ function VideoPalestra() {
   const toggle = () => {
     const el = v.current
     if (!el) return
+    if (!el.getAttribute('src')) el.src = '/video/palestra.mp4'
     if (el.paused) { el.play(); setPlaying(true) } else { el.pause(); setPlaying(false) }
   }
   return (
@@ -18,10 +20,9 @@ function VideoPalestra() {
         <video
           ref={v}
           className="h-full w-full object-cover"
-          src="/video/palestra.mp4"
           poster="/video/palestra.jpg"
           playsInline
-          preload="metadata"
+          preload="none"
           onEnded={() => setPlaying(false)}
           aria-label="Liliany Gonçalves palestrando para uma turma de mulheres"
         />
@@ -62,13 +63,15 @@ export function PorQueEu() {
           </p>
           <p data-reveal className="mt-6">{porQueEu.depois}</p>
 
-          <div data-reveal className="my-10 border-l border-dourado/60 pl-6 md:pl-8">
-            {porQueEu.cena.map((p) => (
-              <p key={p} className="font-display text-lg font-light italic text-nude first:mt-0 [&+p]:mt-3">
-                {p}
-              </p>
-            ))}
-          </div>
+          <Dobravel rotulo="O dia em que ela conheceu o auditório" className="my-10">
+            <div data-reveal className="border-l border-dourado/60 pl-6 md:pl-8">
+              {porQueEu.cena.map((p) => (
+                <p key={p} className="font-display text-lg font-light italic text-nude first:mt-0 [&+p]:mt-3">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </Dobravel>
 
           <p data-reveal>
             <strong className="font-medium text-marfim">{porQueEu.fechoForte}</strong>

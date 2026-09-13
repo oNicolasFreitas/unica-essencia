@@ -1,5 +1,6 @@
 import { oDia } from '../data/copy'
 import { Section, Header, Selo, Anel } from './ui'
+import { Dobravel } from './Dobravel'
 
 /** O Dia: absorveu "O que é" (o deck vira lead) e "O que fica" (dois itens no fecho). */
 export function ODia() {
@@ -37,14 +38,16 @@ export function ODia() {
         ))}
       </ol>
 
-      <div data-reveal className="mt-10 grid gap-8 border-t border-dourado/40 pt-10 md:mt-14 md:grid-cols-2 md:gap-16">
-        {oDia.fica.map((it) => (
-          <div key={it.t}>
-            <p className="font-display text-xl font-normal">{it.t}</p>
-            <p className="mt-2 text-marfim/85">{it.d}</p>
-          </div>
-        ))}
-      </div>
+      <Dobravel rotulo="O que fica depois do dia 10" className="mt-10 md:mt-14 md:border-t md:border-dourado/40 md:pt-10">
+        <div data-reveal className="grid gap-8 md:grid-cols-2 md:gap-16">
+          {oDia.fica.map((it) => (
+            <div key={it.t}>
+              <p className="font-display text-xl font-normal">{it.t}</p>
+              <p className="mt-2 text-marfim/85">{it.d}</p>
+            </div>
+          ))}
+        </div>
+      </Dobravel>
     </Section>
   )
 }

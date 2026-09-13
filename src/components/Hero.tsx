@@ -68,6 +68,7 @@ export function Hero() {
             </Button>
             <p className="text-sm text-marfim/70">
               A partir de <strong className="font-medium text-marfim">{evento.precoMin}</strong> · {evento.parcelaMin}
+              <span className="block">Inscrições até {evento.prazo}</span>
             </p>
           </div>
         </div>
