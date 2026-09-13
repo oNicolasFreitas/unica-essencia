@@ -124,6 +124,7 @@ export const paraQuem = {
 
 export const quemConduz = {
   titulo: 'Duas mulheres que já estiveram do outro lado da sala.',
+  tituloSolo: 'Uma mulher que já esteve do outro lado da sala.',
   liliany: {
     papel: 'Idealizadora',
     nome: 'Liliany Gonçalves',
