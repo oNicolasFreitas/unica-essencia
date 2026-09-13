@@ -1,19 +1,43 @@
-import { useRef, useState } from 'react'
-import { Play, Pause } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { Volume2, VolumeX } from 'lucide-react'
 import { Dobravel } from './Dobravel'
 import { porQueEu } from '../data/copy'
 import { Section, Header } from './ui'
-import { useParallax } from '../hooks/useReveal'
+import { useParallax, reduced } from '../hooks/useReveal'
 
 function VideoPalestra() {
   const v = useRef<HTMLVideoElement>(null)
-  const [playing, setPlaying] = useState(false)
-  const toggle = () => {
+  const [som, setSom] = useState(false)
+  const autoPlay = !reduced()
+
+  /* Roda mudo em loop só enquanto está na tela; o mp4 baixa quando se aproxima. */
+  useEffect(() => {
+    const el = v.current
+    if (!el || !autoPlay) return
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          if (!el.getAttribute('src')) el.src = '/video/palestra.mp4'
+          el.play().catch(() => {})
+        } else {
+          el.pause()
+        }
+      },
+      { rootMargin: '200px 0px', threshold: 0 },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [autoPlay])
+
+  const toggleSom = () => {
     const el = v.current
     if (!el) return
     if (!el.getAttribute('src')) el.src = '/video/palestra.mp4'
-    if (el.paused) { el.play(); setPlaying(true) } else { el.pause(); setPlaying(false) }
+    el.muted = som
+    if (el.paused) el.play().catch(() => {})
+    setSom(!som)
   }
+
   return (
     <div className="liquid-glass liquid-glass--gold rounded-[2rem] p-2">
       <div className="relative aspect-[9/16] overflow-hidden rounded-[1.6rem] bg-vinho">
@@ -21,26 +45,21 @@ function VideoPalestra() {
           ref={v}
           className="h-full w-full object-cover"
           poster="/video/palestra.jpg"
+          muted
+          loop
           playsInline
           preload="none"
-          onEnded={() => setPlaying(false)}
           aria-label="Liliany Gonçalves palestrando para uma turma de mulheres"
         />
         <button
           type="button"
-          onClick={toggle}
-          aria-label={playing ? 'Pausar vídeo' : 'Assistir vídeo'}
-          className={`pressable absolute inset-0 grid place-items-center transition-colors duration-300 ${playing ? 'bg-transparent' : 'bg-cacau/30'}`}
+          onClick={toggleSom}
+          aria-label={som ? 'Silenciar vídeo' : 'Ouvir o vídeo'}
+          aria-pressed={som}
+          className="pressable liquid-glass liquid-glass--dark absolute bottom-4 right-4 grid h-11 w-11 place-items-center rounded-full text-marfim transition-colors duration-300 hover:bg-marfim/10"
         >
-          <span
-            className={`liquid-glass liquid-glass--dark grid h-16 w-16 place-items-center rounded-full text-marfim transition-[transform,opacity] duration-300 ease-out ${playing ? 'scale-75 opacity-0 hover:opacity-100' : 'scale-100 opacity-100'}`}
-          >
-            {playing ? <Pause strokeWidth={1.5} className="relative z-glass h-6 w-6" /> : <Play strokeWidth={1.5} className="relative z-glass ml-1 h-6 w-6" />}
-          </span>
+          {som ? <Volume2 strokeWidth={1.5} className="relative z-glass h-5 w-5" /> : <VolumeX strokeWidth={1.5} className="relative z-glass h-5 w-5" />}
         </button>
-        <span className="pointer-events-none absolute bottom-4 right-5 rounded-full bg-cacau/50 px-2.5 py-1 text-xs text-marfim/85">
-          0:13
-        </span>
       </div>
     </div>
   )
