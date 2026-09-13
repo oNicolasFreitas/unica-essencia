@@ -31,9 +31,9 @@ export function FAQ() {
   return (
     <Section id="perguntas" bg="nude" tight>
       <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
-        <div>
+        <div className="flex flex-col items-center text-center md:items-start md:text-left">
           <h2 data-reveal className="max-w-[12ch]">{faq.titulo}</h2>
-          <div data-reveal id="duvida" className="mt-8 scroll-mt-20">
+          <div data-reveal id="duvida" className="mt-8 flex flex-col items-center scroll-mt-20 md:items-start">
             <p className="text-cacau/75">{faq.duvida}</p>
             <Button href={wa} variant="ghost" className="mt-4" data-whatsapp {...externalProps(wa)}>{cta.whatsapp}</Button>
           </div>
@@ -63,7 +63,7 @@ export function Fechamento() {
 export function Footer() {
   return (
     <footer className="bg-marfim px-5 pb-28 pt-8 text-sm text-cacau/60 sm:px-8 md:pb-10 lg:px-12">
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 border-t border-vinho/15 pt-8 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 border-t border-vinho/15 pt-8 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="flex items-center gap-3">
           <img src="/img/logo.png" alt="" width={32} height={32} className="h-8 w-8 object-contain" />
           <span className="font-display uppercase tracking-[0.2em] text-vinho pt-[3px]">{evento.nome}</span>

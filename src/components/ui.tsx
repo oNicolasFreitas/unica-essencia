@@ -10,7 +10,7 @@ const tone: Record<Tone, string> = {
 
 export function Section({ id, bg = 'marfim', className = '', children, tight = false }: { id?: string; bg?: Tone; className?: string; children: ReactNode; tight?: boolean }) {
   return (
-    <section id={id} className={`relative scroll-mt-20 ${tone[bg]} ${tight ? 'py-14 md:py-20' : 'py-16 md:py-28'} px-5 sm:px-8 lg:px-12 ${className}`}>
+    <section id={id} className={`relative scroll-mt-20 ${tone[bg]} ${tight ? 'py-12 md:py-20' : 'py-14 md:py-28'} px-5 sm:px-8 lg:px-12 ${className}`}>
       <div className="relative mx-auto w-full max-w-6xl">{children}</div>
     </section>
   )

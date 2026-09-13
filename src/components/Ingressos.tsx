@@ -15,12 +15,12 @@ export function Ingressos() {
   const he = checkoutHref('essencial')
   return (
     <Section id="ingressos">
-      <div className="grid items-end gap-8 md:grid-cols-[auto_1fr] md:gap-14">
-        <div data-reveal className="flex items-baseline gap-3 md:block">
+      <div className="grid items-end gap-6 text-center md:grid-cols-[auto_1fr] md:gap-14 md:text-left">
+        <div data-reveal className="flex flex-col items-center md:block">
           <span ref={n} className="font-display text-numero font-extralight text-vinho">0</span>
           <span className="font-display text-lg font-light text-cacau/70 md:mt-1 md:block">{oEncontro.legenda}</span>
         </div>
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h2 data-reveal className="max-w-[18ch]">{oEncontro.titulo}</h2>
           <p data-reveal className="mt-4 max-w-[52ch] text-cacau/75">{oEncontro.p1} {oEncontro.p3}</p>
         </div>
@@ -67,7 +67,7 @@ export function Ingressos() {
       </p>
       {/* AVISO: placeholder — substituir por dado real. Faixa de reembolso, auditório e almoço (Fase 0.4/0.5/0.8) entra aqui quando a Liliany enviar. */}
 
-      <div className="mt-16 grid gap-8 border-t border-vinho/15 pt-12 md:mt-24 md:grid-cols-2 md:gap-12">
+      <div className="mt-14 grid gap-10 border-t border-vinho/15 pt-10 md:mt-24 md:grid-cols-2 md:gap-12 md:pt-12">
         <div data-reveal>
           <h3 className="text-vinho">{paraQuem.sim.titulo}</h3>
           <ul className="mt-4 flex flex-col gap-3 text-sm text-cacau/85">
