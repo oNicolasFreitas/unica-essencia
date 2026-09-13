@@ -1,101 +1,54 @@
-import { useEffect, useState } from 'react'
 import { evento, hero, cta } from '../data/copy'
 import { Button } from './ui'
 import { reduced } from '../hooks/useReveal'
-import { Borboleta } from './Borboleta'
-
-function useIsDesktop() {
-  const [d, setD] = useState(() => window.matchMedia('(min-width: 768px)').matches)
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)')
-    const on = () => setD(mq.matches)
-    mq.addEventListener('change', on)
-    return () => mq.removeEventListener('change', on)
-  }, [])
-  return d
-}
 
 /**
- * Hero cinematográfico com vídeo VERTICAL (9:16).
- * Mobile: o vídeo preenche a tela. Desktop: painel retrato à direita
- * sobre fundo ambiente (o mesmo frame, desfocado e tingido de vinho).
+ * Hero editorial light: título em vinho sobre marfim à esquerda,
+ * vídeo vertical da Liliany em moldura à direita. No mobile o vídeo
+ * vem primeiro, em 4:5, e o texto abaixo.
  */
 export function Hero() {
-  const desktop = useIsDesktop()
   const autoPlay = !reduced()
   return (
-    <section id="top" className="relative isolate flex min-h-[100dvh] items-end overflow-hidden bg-cacau text-marfim">
-      <div
-        aria-hidden
-        className="absolute inset-0 z-video hidden md:block bg-cover bg-center scale-110 opacity-60 blur-2xl"
-        style={{ backgroundImage: 'url(/video/hero.jpg)' }}
-      />
-      <div aria-hidden className="absolute inset-0 z-video hidden md:block bg-gradient-to-r from-cacau via-cacau/85 to-vinho/40" />
-      <Borboleta />
-
-      {!desktop && (
-        <video
-          className="absolute inset-0 z-video h-full w-full object-cover"
-          src="/video/hero.mp4"
-          poster="/video/hero.jpg"
-          autoPlay={autoPlay}
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-hidden
-        />
-      )}
-      <div
-        aria-hidden
-        className="absolute inset-0 z-video md:hidden backdrop-blur-xl pointer-events-none"
-        style={{
-          WebkitMaskImage: 'linear-gradient(to top, black 0%, black 30%, transparent 70%)',
-          maskImage: 'linear-gradient(to top, black 0%, black 30%, transparent 70%)',
-        }}
-      />
-      <div aria-hidden className="absolute inset-0 z-video md:hidden bg-gradient-to-t from-cacau via-cacau/60 to-cacau/20" />
-
-      <div className="relative z-overlay mx-auto grid w-full max-w-6xl items-end gap-10 px-5 pb-12 pt-28 sm:px-8 md:grid-cols-[1.15fr_0.85fr] md:gap-12 md:pb-20 lg:px-12">
-        <div className="flex flex-col gap-6 md:gap-8">
-          <h1 className="enter enter-2 max-w-[22ch]">
-            Você é a mulher que resolve.{' '}
-            <span className="opacity-80">E quem segura </span>
-            <span className="script">você?</span>
-          </h1>
-          <p className="enter enter-3 max-w-[46ch] text-base text-marfim/80 md:text-lg">{hero.promessa}</p>
-          <div className="enter enter-4 flex flex-wrap items-center gap-x-6 gap-y-4">
-            <Button href="#ingressos" variant="gold">
-              {cta.vaga}
-            </Button>
-            <p className="text-sm text-marfim/70">
-              A partir de <strong className="font-medium text-marfim">{evento.precoMin}</strong> · {evento.parcelaMin}
-              <span className="block">Inscrições até {evento.prazo}</span>
-            </p>
+    <section id="top" className="relative bg-marfim px-5 pb-14 pt-24 sm:px-8 md:pb-24 md:pt-32 lg:px-12">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-14 lg:gap-20">
+        <div className="enter enter-2 order-first md:order-last">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-nude md:aspect-[9/13]">
+            <video
+              className="h-full w-full object-cover"
+              src="/video/hero.mp4"
+              poster="/video/hero.jpg"
+              autoPlay={autoPlay}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Liliany Gonçalves conduzindo uma turma de mulheres"
+            />
+            <p className="absolute bottom-4 left-5 rounded-full bg-marfim/85 px-3 py-1 text-xs text-vinho backdrop-blur">{hero.legendaVideo}</p>
           </div>
         </div>
 
-        {desktop && (
-          <div className="enter enter-3 relative justify-self-end">
-            <div className="liquid-glass liquid-glass--gold rounded-[2rem] p-2">
-              <div className="relative aspect-[9/16] h-[min(68dvh,700px)] overflow-hidden rounded-[1.6rem] bg-cacau">
-                <video
-                  className="h-full w-full object-cover"
-                  src="/video/hero.mp4"
-                  poster="/video/hero.jpg"
-                  autoPlay={autoPlay}
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label="Liliany Gonçalves conduzindo uma turma de mulheres"
-                />
-                <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-cacau/70 to-transparent" />
-                <p className="absolute bottom-5 left-6 right-6 text-sm text-marfim/85">{hero.legendaVideo}</p>
-              </div>
-            </div>
+        <div className="flex flex-col gap-6 md:gap-8">
+          <h1 className="enter enter-2 max-w-[20ch]">
+            Você é a mulher que resolve. E quem segura <span className="script">você?</span>
+          </h1>
+          <p className="enter enter-3 max-w-[44ch] text-base text-cacau/80 md:text-lg">{hero.promessa}</p>
+          <div className="enter enter-4 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <Button href="#ingressos" variant="vinho">{cta.vaga}</Button>
+            <p className="text-sm text-cacau/70">
+              A partir de <strong className="font-medium text-vinho">{evento.precoMin}</strong> · {evento.parcelaMin}
+            </p>
           </div>
-        )}
+          <dl className="enter enter-4 grid grid-cols-2 gap-x-6 gap-y-3 border-t border-vinho/15 pt-6 text-sm sm:grid-cols-4">
+            {[['Data', evento.data], ['Horário', evento.horario], ['Cidade', `${evento.cidade} · ${evento.uf}`], ['Turma', `${evento.lugares} mulheres`]].map(([k, v]) => (
+              <div key={k}>
+                <dt className="text-cacau/70">{k}</dt>
+                <dd className="mt-0.5 font-medium text-vinho">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
     </section>
   )

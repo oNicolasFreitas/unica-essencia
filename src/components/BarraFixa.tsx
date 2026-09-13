@@ -1,52 +1,31 @@
 import { useEffect, useState } from 'react'
 import { evento, cta } from '../data/copy'
 
-/** Barra de CTA do mobile: entra depois do hero, sai no fechamento. Acima de md a navbar já tem o pill. */
+/** Barra de CTA do mobile: aparece depois do hero, some sobre os ingressos e no fim. */
 export function BarraFixa() {
   const [show, setShow] = useState(false)
-
   useEffect(() => {
     const hero = document.getElementById('top')
-    const fim = document.getElementById('fechamento')
     const ing = document.getElementById('ingressos')
-    if (!hero || !('IntersectionObserver' in window)) { setShow(true); return }
-    let heroOut = false
-    let fimIn = false
-    let ingIn = false
-    const update = () => setShow(heroOut && !fimIn && !ingIn)
-    const io1 = new IntersectionObserver(([e]) => { heroOut = !e.isIntersecting; update() }, { threshold: 0 })
-    io1.observe(hero)
-    let io2: IntersectionObserver | undefined
-    if (fim) {
-      io2 = new IntersectionObserver(([e]) => { fimIn = e.isIntersecting; update() }, { threshold: 0.2 })
-      io2.observe(fim)
+    const fim = document.getElementById('fechamento')
+    if (!hero || !('IntersectionObserver' in window)) return
+    const st = { hero: true, ing: false, fim: false }
+    const update = () => setShow(!st.hero && !st.ing && !st.fim)
+    const obs = (el: Element | null, key: keyof typeof st, threshold = 0) => {
+      if (!el) return null
+      const io = new IntersectionObserver(([e]) => { st[key] = e.isIntersecting; update() }, { threshold })
+      io.observe(el)
+      return io
     }
-    let io3: IntersectionObserver | undefined
-    if (ing) {
-      io3 = new IntersectionObserver(([e]) => { ingIn = e.isIntersecting; update() }, { threshold: 0.05 })
-      io3.observe(ing)
-    }
-    return () => { io1.disconnect(); io2?.disconnect(); io3?.disconnect() }
+    const ios = [obs(hero, 'hero'), obs(ing, 'ing', 0.05), obs(fim, 'fim', 0.2)]
+    return () => ios.forEach((io) => io?.disconnect())
   }, [])
 
   return (
-    <div
-      inert={!show}
-      className={`fixed inset-x-0 bottom-0 z-overlay px-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:hidden transition-[transform,opacity] duration-500 ease-out ${
-        show ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-6 opacity-0'
-      }`}
-    >
-      <div className="liquid-glass liquid-glass--dark mx-auto flex max-w-2xl items-center justify-between gap-4 rounded-full py-1.5 pl-6 pr-2 text-marfim">
-        <p className="relative z-glass min-w-0 truncate text-sm">
-          <strong className="font-medium">{evento.data}</strong>
-          <span className="hidden sm:inline text-marfim/70"> · {evento.lugares} lugares · a partir de {evento.parcelaMin}</span>
-        </p>
-        <a
-          href="#ingressos"
-          className="pressable relative z-glass inline-flex shrink-0 items-center rounded-full bg-marfim px-5 py-2.5 text-sm font-medium text-vinho transition-colors duration-300 hover:bg-nude"
-        >
-          {cta.vaga}
-        </a>
+    <div inert={!show} className={`fixed inset-x-0 bottom-0 z-raised px-4 pb-[max(1rem,env(safe-area-inset-bottom))] md:hidden transition-[transform,opacity] duration-500 ease-out ${show ? '' : 'pointer-events-none translate-y-6 opacity-0'}`}>
+      <div className="glass mx-auto flex items-center justify-between gap-3 rounded-full py-1.5 pl-5 pr-1.5">
+        <p className="min-w-0 truncate text-sm text-cacau/80"><strong className="font-medium text-vinho">{evento.dataCurta}</strong> · a partir de {evento.precoMin}</p>
+        <a href="#ingressos" className="pressable inline-flex min-h-[44px] shrink-0 items-center rounded-full bg-vinho px-5 text-sm font-medium text-marfim transition-colors duration-300 hover:bg-ameixa">{cta.vaga}</a>
       </div>
     </div>
   )
