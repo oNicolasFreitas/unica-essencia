@@ -11,16 +11,16 @@ export function Hero() {
     <section id="top" className="relative bg-marfim px-5 pb-12 pt-24 sm:px-8 md:pb-24 md:pt-32 lg:px-12">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-14 lg:gap-20">
         <div className="enter enter-2 order-first md:order-last">
-          <div className="relative mx-auto aspect-[4/5] max-w-[420px] overflow-hidden rounded-[1.5rem] bg-nude md:mx-0 md:aspect-[9/13] md:max-w-none">
+          <div className="relative mx-auto aspect-[4/5] max-w-[420px] overflow-hidden rounded-[1.5rem] bg-nude md:mx-0 md:aspect-[4/5] md:max-w-none">
             <img
               src="/img/hero.webp"
-              alt="Liliany Gonçalves conduzindo uma turma de mulheres"
-              width={1080}
-              height={1920}
+              alt="Liliany Gonçalves de colete de staff, em pé diante de um auditório lotado"
+              width={1066}
+              height={1333}
               fetchPriority="high"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-top"
             />
-            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full md:left-5 md:translate-x-0 bg-marfim/85 px-3 py-1 text-xs text-vinho backdrop-blur">{hero.legendaVideo}</p>
+            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full md:left-5 md:translate-x-0 bg-marfim/85 px-3 py-1 text-xs text-vinho backdrop-blur">{hero.legendaFoto}</p>
           </div>
         </div>
 

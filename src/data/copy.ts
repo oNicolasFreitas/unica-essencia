@@ -22,7 +22,7 @@ export const cta = {
 export const hero = {
   promessa:
     'Uma imersão de um sábado para a mulher que todo mundo procura quando precisa, e que não tem a quem procurar.',
-  legendaVideo: 'Liliany em sala',
+  legendaFoto: 'Liliany, nos bastidores de uma imersão',
 }
 
 export const espelho = {
