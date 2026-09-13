@@ -1,6 +1,5 @@
 import { evento, hero, cta } from '../data/copy'
 import { Button } from './ui'
-import { reduced } from '../hooks/useReveal'
 
 /**
  * Hero editorial light: título em vinho sobre marfim à esquerda,
@@ -8,22 +7,18 @@ import { reduced } from '../hooks/useReveal'
  * vem primeiro, em 4:5, e o texto abaixo.
  */
 export function Hero() {
-  const autoPlay = !reduced()
   return (
     <section id="top" className="relative bg-marfim px-5 pb-12 pt-24 sm:px-8 md:pb-24 md:pt-32 lg:px-12">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-14 lg:gap-20">
         <div className="enter enter-2 order-first md:order-last">
           <div className="relative mx-auto aspect-[4/5] max-w-[420px] overflow-hidden rounded-[1.5rem] bg-nude md:mx-0 md:aspect-[9/13] md:max-w-none">
-            <video
+            <img
+              src="/img/hero.webp"
+              alt="Liliany Gonçalves conduzindo uma turma de mulheres"
+              width={1080}
+              height={1920}
+              fetchPriority="high"
               className="h-full w-full object-cover"
-              src="/video/hero.mp4"
-              poster="/video/hero.jpg"
-              autoPlay={autoPlay}
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="Liliany Gonçalves conduzindo uma turma de mulheres"
             />
             <p className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full md:left-5 md:translate-x-0 bg-marfim/85 px-3 py-1 text-xs text-vinho backdrop-blur">{hero.legendaVideo}</p>
           </div>
