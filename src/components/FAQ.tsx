@@ -79,7 +79,6 @@ export function Fechamento() {
             {cta.vaga}
           </Button>
         </div>
-        <p data-reveal className="deck mt-6 max-w-[32ch] text-nude">{fechamento.tese}</p>
       </div>
     </Section>
   )

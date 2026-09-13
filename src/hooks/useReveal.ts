@@ -16,6 +16,15 @@ export function useReveal() {
       document.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-in'))
       return
     }
+    // Títulos palavra-a-palavra: cada h2 com [data-word] entra em cascata.
+    document.querySelectorAll<HTMLElement>('h2:has([data-word])').forEach((h) => {
+      const words = h.querySelectorAll('[data-word]')
+      gsap.fromTo(
+        words,
+        { y: '0.5em', filter: 'blur(8px)' },
+        { y: 0, filter: 'blur(0px)', duration: 0.9, ease: 'power3.out', stagger: 0.06, scrollTrigger: { trigger: h, start: 'top 88%', once: true } },
+      )
+    })
     ScrollTrigger.batch('[data-reveal]', {
       start: 'top 88%',
       once: true,

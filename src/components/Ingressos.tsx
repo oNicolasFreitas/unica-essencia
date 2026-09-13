@@ -4,6 +4,7 @@ import { ingressos, oEncontro, evento, cta } from '../data/copy'
 import { Section, Header, Button } from './ui'
 import { checkoutHref, externalProps } from '../config'
 import { useCounter } from '../hooks/useReveal'
+import { Palavras } from './Palavras'
 
 /** O Encontro: ficha técnica + urgência (absorveu "Prazo"), imediatamente antes de Ingressos. */
 export function OEncontro() {
@@ -19,7 +20,7 @@ export function OEncontro() {
           <span className="mt-2 font-display text-xl font-light text-marfim/85 md:text-2xl">{oEncontro.legenda}</span>
         </div>
         <div className="prosa text-marfim/85">
-          <h2 data-reveal>{oEncontro.titulo}</h2>
+          <h2><Palavras partes={[oEncontro.titulo]} /></h2>
           <p data-reveal className="mt-8 font-display text-xl font-light text-nude">{oEncontro.p1}</p>
           <p data-reveal>{oEncontro.p3}</p>
         </div>

@@ -1,13 +1,14 @@
 import { espelho } from '../data/copy'
 import { Section, Anel } from './ui'
+import { Palavras } from './Palavras'
 
 export function Espelho() {
   return (
     <Section tone="vinho" className="overflow-hidden">
       <Anel className="-right-40 -top-40 h-[34rem] w-[34rem] text-marfim/10" />
       <div className="flex flex-col items-center text-center">
-        <h2 data-reveal className="max-w-[18ch]">
-          O que todos veem. <span className="script md:whitespace-nowrap">E o que ninguém vê.</span>
+        <h2 className="max-w-[18ch]">
+          <Palavras partes={['O que todos veem.', <span className="script md:whitespace-nowrap">E o que ninguém vê.</span>]} />
         </h2>
       </div>
 

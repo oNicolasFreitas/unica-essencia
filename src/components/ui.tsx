@@ -48,7 +48,7 @@ export function Header({
 }) {
   return (
     <div className={`flex flex-col gap-5 md:gap-6 ${center ? 'items-center text-center' : ''}`}>
-      <h2 data-reveal style={{ maxWidth: max }}>
+      <h2 data-reveal={typeof titulo === 'string' ? '' : undefined} style={{ maxWidth: max }}>
         {titulo}
       </h2>
       {lead && (

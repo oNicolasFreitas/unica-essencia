@@ -11,6 +11,7 @@ import { ParaQuem } from './components/ParaQuem'
 import { QuemConduz } from './components/QuemConduz'
 import { Ingressos, OEncontro } from './components/Ingressos'
 import { FAQ, Fechamento, Footer } from './components/FAQ'
+import { FaixaTese } from './components/FaixaTese'
 
 /* Fundos em blocos: cacau (hero) → vinho ×2 → cacau ×2 → vinho ×2 → marfim → cacau ×3. */
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
         <OEncontro />
         <Ingressos />
         <FAQ />
+        <FaixaTese />
         <Fechamento />
       </main>
       <Footer />

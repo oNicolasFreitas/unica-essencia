@@ -1,6 +1,7 @@
 import { oDia } from '../data/copy'
 import { Section, Header, Selo, Anel } from './ui'
 import { Dobravel } from './Dobravel'
+import { Palavras } from './Palavras'
 
 /** O Dia: absorveu "O que é" (o deck vira lead) e "O que fica" (dois itens no fecho). */
 export function ODia() {
@@ -8,7 +9,7 @@ export function ODia() {
     <Section id="o-dia" tone="cacau" className="overflow-hidden">
       <Anel className="-left-52 top-10 h-[40rem] w-[40rem] text-dourado/10" />
       <Header
-        titulo={oDia.titulo}
+        titulo={<Palavras partes={[oDia.titulo]} />}
         max="16ch"
         lead={
           <>

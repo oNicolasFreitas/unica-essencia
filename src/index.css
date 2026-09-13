@@ -79,6 +79,8 @@
 /* Reveal screenshot-safe: parte de um estado visível (deslocado e levemente
    desfocado), nunca de opacity 0. */
 [data-reveal] { transform: translateY(28px); filter: blur(6px); }
+[data-word] { transform: translateY(0.5em); filter: blur(8px); }
+@media (prefers-reduced-motion: reduce) { [data-word] { transform: none; filter: none; } }
 [data-reveal].is-in { transform: none; filter: blur(0); transition: transform .9s var(--ease-out), filter .9s var(--ease-out); }
 
 .marquee-track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
