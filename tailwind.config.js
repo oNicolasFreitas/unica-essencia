@@ -30,7 +30,7 @@ export default {
         '3xl': ['2.6rem', { lineHeight: '1.1' }],
         deck: ['clamp(1.4rem, 1.1rem + 1.4vw, 2rem)', { lineHeight: '1.3' }],
         h2: ['clamp(2.1rem, 1.4rem + 3.2vw, 3.9rem)', { lineHeight: '1.06', letterSpacing: '-0.015em' }],
-        h1: ['clamp(2.4rem, 1.2rem + 3.2vw, 4.2rem)', { lineHeight: '0.98', letterSpacing: '-0.02em' }],
+        h1: ['clamp(2.2rem, 1rem + 2.4vw, 3rem)', { lineHeight: '0.98', letterSpacing: '-0.02em' }],
         numero: ['clamp(5rem, 3rem + 10vw, 10rem)', { lineHeight: '1' }],
       },
       /* Escala de z-index nomeada. Nada de valor solto nos componentes. */
