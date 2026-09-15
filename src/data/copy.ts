@@ -8,6 +8,7 @@ export const evento = {
   horario: 'Das 9h às 19h',
   cidade: 'Balneário Camboriú',
   uf: 'SC',
+  endereco: 'Rua Bahia, 414, Bairro dos Estados',
   lugares: 130,
   prazo: '3 de outubro',
   precoMin: 'R$ 297',
@@ -168,10 +169,12 @@ export const ingressos = {
     valor: 'R$ 597',
     parcela: 'ou 12x de R$ 49,75',
     itens: [
-      'Sua mesa própria para escrever nas dinâmicas, nas primeiras fileiras',
+      'Mesa própria nas primeiras fileiras, mais perto do palco',
       'Seu nome na cadeira, esperando você chegar',
       'Recepção sem fila: você chega e já tem alguém te esperando',
-      'Kit Única, montado com o seu nome',
+      'Análise de Perfil Comportamental com devolutiva',
+      'Taça e xícara Única Essência',
+      'Kit especial Única Essência',
       'Apostila, todas as dinâmicas e o presente de encerramento',
       'Coffee incluso ao longo do dia',
     ],
@@ -187,6 +190,7 @@ export const ingressos = {
   },
   igualdadeForte: 'O conteúdo do dia é o mesmo para as 130.',
   igualdade: ' Nenhuma mulher aprende mais por pagar mais, e isso não vai mudar nunca aqui.',
+  garantia: 'Se você se inscrever e mudar de ideia, tem 7 dias para pedir o reembolso integral, sem precisar explicar. É o que a lei garante, e a gente cumpre.',
 }
 
 export const faq = {
@@ -210,8 +214,16 @@ export const faq = {
       ],
     },
     {
+      q: 'E se eu me arrepender depois de pagar?',
+      a: ['Você tem 7 dias depois da compra para pedir o reembolso integral, sem precisar explicar. Depois disso, a vaga continua sendo sua para dar: até 9 de outubro você indica outra mulher e a gente troca o nome.'],
+    },
+    {
       q: 'Preciso já ter feito algum trabalho de autoconhecimento?',
       a: ['Não. A imersão foi desenhada para funcionar tanto para quem nunca parou para se olhar quanto para quem já percorreu esse caminho. Nenhuma dinâmica é obrigatória. Você participa no ritmo que quiser.'],
+    },
+    {
+      q: 'Onde vai ser?',
+      a: ['Rua Bahia, 414, Bairro dos Estados, Balneário Camboriú. As orientações do dia chegam no seu e-mail assim que a inscrição for confirmada.'],
     },
     {
       q: 'Tem coffee? E almoço?',
@@ -242,7 +254,7 @@ export const fechamento = {
 }
 
 export const rodape = {
-  linha1: 'Imersão presencial feminina · sábado, 10 de outubro de 2026 · Balneário Camboriú, SC',
+  linha1: 'Imersão presencial feminina · sábado, 10 de outubro de 2026 · Rua Bahia, 414, Bairro dos Estados, Balneário Camboriú, SC',
   linha2: 'Realização: Liliany Gonçalves',
 }
 

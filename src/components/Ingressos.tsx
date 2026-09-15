@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { Check } from 'lucide-react'
+import { Check, ShieldCheck, MapPin } from 'lucide-react'
 import { ingressos, oEncontro, evento, paraQuem } from '../data/copy'
 import { Section, Button } from './ui'
 import { checkoutHref, externalProps } from '../config'
@@ -41,7 +41,6 @@ export function Ingressos() {
               <li key={t} className="flex gap-3"><Check strokeWidth={1.5} className="mt-1 h-4 w-4 shrink-0 text-dourado" aria-hidden /><span>{t}</span></li>
             ))}
           </ul>
-          {/* AVISO: placeholder — substituir por dado real (Fase 0.7: quantas vagas Única existem) */}
           <Button href={hu} variant="marfim" className="mt-auto w-full" data-checkout="unica" {...externalProps(hu)}>{u.cta}</Button>
         </article>
 
@@ -65,7 +64,10 @@ export function Ingressos() {
       <p data-reveal className="mx-auto mt-8 max-w-2xl text-center text-sm text-cacau/75">
         <strong className="font-medium text-vinho">{ingressos.igualdadeForte}</strong>{ingressos.igualdade}
       </p>
-      {/* AVISO: placeholder — substituir por dado real. Faixa de reembolso, auditório e almoço (Fase 0.4/0.5/0.8) entra aqui quando a Liliany enviar. */}
+      <div data-reveal className="mx-auto mt-8 grid max-w-3xl gap-4 rounded-[1.5rem] border border-vinho/15 p-6 text-sm text-cacau/80 sm:grid-cols-2 sm:gap-8">
+        <div className="flex gap-3"><ShieldCheck strokeWidth={1.5} className="mt-0.5 h-5 w-5 shrink-0 text-vinho" aria-hidden /><p>{ingressos.garantia}</p></div>
+        <div className="flex gap-3"><MapPin strokeWidth={1.5} className="mt-0.5 h-5 w-5 shrink-0 text-vinho" aria-hidden /><p><strong className="font-medium text-vinho">{evento.endereco}</strong>, {evento.cidade} · {evento.uf}. Das 9h às 19h, com coffee incluso.</p></div>
+      </div>
 
       <div className="mt-14 grid gap-10 border-t border-vinho/15 pt-10 md:mt-24 md:grid-cols-2 md:gap-12 md:pt-12">
         <div data-reveal>
