@@ -173,6 +173,7 @@ export const ingressos = {
       'Recepção sem fila: você chega e já tem alguém te esperando',
       'Kit Única, montado com o seu nome',
       'Apostila, todas as dinâmicas e o presente de encerramento',
+      'Coffee incluso ao longo do dia',
     ],
     cta: 'Quero a Única',
   },
@@ -181,7 +182,7 @@ export const ingressos = {
     frase: 'O dia inteiro, do começo ao fim.',
     valor: 'R$ 297',
     parcela: 'ou 12x de R$ 24,75',
-    itens: ['Cadeira reservada no auditório', 'Apostila da imersão', 'Todas as dinâmicas do dia', 'O presente de encerramento'],
+    itens: ['Cadeira reservada no auditório', 'Apostila da imersão', 'Todas as dinâmicas do dia', 'O presente de encerramento', 'Coffee incluso ao longo do dia'],
     cta: 'Quero o Essencial',
   },
   igualdadeForte: 'O conteúdo do dia é o mesmo para as 130.',
@@ -211,6 +212,10 @@ export const faq = {
     {
       q: 'Preciso já ter feito algum trabalho de autoconhecimento?',
       a: ['Não. A imersão foi desenhada para funcionar tanto para quem nunca parou para se olhar quanto para quem já percorreu esse caminho. Nenhuma dinâmica é obrigatória. Você participa no ritmo que quiser.'],
+    },
+    {
+      q: 'Tem coffee? E almoço?',
+      a: ['O coffee está incluso no ingresso, ao longo do dia. O almoço não está: o intervalo é seu, e Balneário Camboriú tem opções perto do auditório.'],
     },
     {
       q: 'Posso ir sozinha?',
