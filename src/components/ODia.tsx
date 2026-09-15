@@ -1,5 +1,6 @@
 import { oDia } from '../data/copy'
-import { Section } from './ui'
+import { Section, Button } from './ui'
+import { cta } from '../data/copy'
 
 /** O dia: deck + os três objetos em lista editorial numerada. Sem cards. */
 export function ODia() {
@@ -24,6 +25,21 @@ export function ODia() {
             </li>
           ))}
         </ol>
+      </div>
+
+      <div className="mt-14 border-t border-vinho/15 pt-10 md:mt-20">
+        <p data-reveal className="text-center text-sm text-cacau/60 md:text-left">O que fica depois do dia 10</p>
+        <div className="mt-6 grid gap-8 md:grid-cols-3 md:gap-10">
+          {oDia.fica.map((it) => (
+            <div key={it.t} data-reveal className="text-center md:text-left">
+              <p className="font-display text-lg font-normal text-vinho">{it.t}</p>
+              <p className="mt-2 text-sm text-cacau/75">{it.d}</p>
+            </div>
+          ))}
+          <div data-reveal className="flex items-center justify-center md:justify-start">
+            <Button href="#ingressos" variant="ghost">{cta.vaga}</Button>
+          </div>
+        </div>
       </div>
     </Section>
   )
