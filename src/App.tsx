@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { Espelho } from './components/Espelho'
 import { ODia } from './components/ODia'
+import { ParaQuem } from './components/ParaQuem'
 import { QuemConduz } from './components/QuemConduz'
 import { Ingressos } from './components/Ingressos'
 import { FAQ, Fechamento, Footer } from './components/FAQ'
@@ -18,6 +19,7 @@ export default function App() {
       <main>
         <Hero />
         <Espelho />
+        <ParaQuem />
         <ODia />
         <QuemConduz />
         <Ingressos />

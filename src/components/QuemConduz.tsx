@@ -25,11 +25,6 @@ export function QuemConduz() {
             <p className="mt-3 text-sm text-cacau/80">{quemConduz.liliany.p[0]}</p>
             <p className="mt-3 text-sm text-cacau/80">{quemConduz.liliany.p[1]}</p>
           </div>
-          <div className="mt-10 grid w-full grid-cols-4 gap-2 sm:gap-3">
-            {[1, 4, 6, 5].map((i, k) => (
-              <img key={i} data-clip src={`/img/servindo-${i}.webp`} alt={k === 0 ? 'Liliany servindo como staff em uma imersão' : ''} width={300} height={400} loading="lazy" className="aspect-[3/4] w-full rounded-xl object-cover" />
-            ))}
-          </div>
           <div data-reveal className="mt-10">
             <Button href="#ingressos" variant="vinho">{cta.vaga}</Button>
           </div>

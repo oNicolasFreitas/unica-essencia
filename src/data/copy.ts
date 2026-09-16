@@ -259,8 +259,9 @@ export const rodape = {
 }
 
 export const nav = [
-  { label: 'O dia', href: '#o-dia' },
+  { label: 'Para quem é', href: '#para-quem' },
+  { label: 'O que você vai viver', href: '#o-dia' },
   { label: 'Quem conduz', href: '#quem-conduz' },
-  { label: 'Ingressos', href: '#ingressos' },
-  { label: 'Perguntas', href: '#perguntas' },
+  { label: 'Investimento', href: '#ingressos' },
+  { label: 'FAQ', href: '#perguntas' },
 ]
