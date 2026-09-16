@@ -8,7 +8,7 @@ export function QuemConduz() {
     <Section id="quem-conduz" bg="blush">
       <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:items-center">
         <figure data-clip className="mx-auto w-full max-w-[420px] overflow-hidden rounded-[1.5rem] md:max-w-none">
-          <img src="/img/liliany-2.webp" alt="Liliany, de crachá de staff, abraçando uma participante sentada à mesa" width={1000} height={1133} loading="lazy" className="aspect-[4/4.6] w-full object-cover" />
+          <img src="/img/liliany-2.webp" alt="Retrato de Liliany Gonçalves de vestido vermelho" width={1000} height={1150} loading="lazy" className="aspect-[4/4.6] w-full object-cover" />
         </figure>
         <div className="flex flex-col items-center text-center md:items-start md:text-left">
           <h2 data-reveal className="max-w-[16ch]">{quemConduz.tituloSolo}</h2>

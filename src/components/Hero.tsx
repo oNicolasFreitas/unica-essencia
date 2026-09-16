@@ -14,11 +14,11 @@ export function Hero() {
           <div className="relative mx-auto aspect-[4/5] max-w-[420px] overflow-hidden rounded-[1.5rem] bg-nude md:mx-0 md:aspect-[4/5] md:max-w-none">
             <img
               src="/img/hero.webp"
-              alt="Liliany Gonçalves de colete de staff, em pé diante de um auditório lotado"
-              width={1066}
-              height={1333}
+              alt="Retrato de Liliany Gonçalves"
+              width={1200}
+              height={1500}
               fetchPriority="high"
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-cover"
             />
             <p className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full md:left-5 md:translate-x-0 bg-marfim/85 px-3 py-1 text-xs text-vinho backdrop-blur">{hero.legendaFoto}</p>
           </div>
