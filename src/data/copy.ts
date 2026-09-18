@@ -10,7 +10,7 @@ export const evento = {
   cidade: 'Balneário Camboriú',
   uf: 'SC',
   endereco: 'Rua Bahia, 414, Bairro dos Estados',
-  lugares: 130,
+  lugares: 100,
   prazo: '3 de outubro',
   precoMin: 'R$ 297',
   parcelaMin: 'em até 12x',
@@ -91,8 +91,8 @@ export const oDia = {
     {
       n: 'III',
       nome: 'O presente',
-      olho: 'São 130 presentes. Nenhum igual ao outro. Nenhum.',
-      corpo: 'Não é lembrancinha, não tem logo, não é o mesmo item repetido 130 vezes. Cada um tem uma roupagem que só ele tem.',
+      olho: 'São 100 presentes. Nenhum igual ao outro. Nenhum.',
+      corpo: 'Não é lembrancinha, não tem logo, não é o mesmo item repetido 100 vezes. Cada um tem uma roupagem que só ele tem.',
       fecho: 'Você entende por quê no minuto em que o seu chegar na sua mão.',
     },
   ],
@@ -165,7 +165,7 @@ export const oEncontro = {
     { k: 'Data', v: 'Sábado, 10 de outubro' },
     { k: 'Horário', v: 'Das 9h às 19h' },
     { k: 'Cidade', v: 'Balneário Camboriú · SC' },
-    { k: 'Turma', v: '130 mulheres' },
+    { k: 'Turma', v: '100 mulheres' },
   ],
 }
 
@@ -197,7 +197,7 @@ export const ingressos = {
     itens: ['Cadeira reservada no auditório', 'Apostila da imersão', 'Todas as dinâmicas do dia', 'O presente de encerramento', 'Coffee incluso ao longo do dia'],
     cta: 'Quero o Essencial',
   },
-  igualdadeForte: 'O conteúdo do dia é o mesmo para as 130.',
+  igualdadeForte: 'O conteúdo do dia é o mesmo para as 100.',
   igualdade: ' Nenhuma mulher aprende mais por pagar mais, e isso não vai mudar nunca aqui.',
   garantia: 'Se você se inscrever e mudar de ideia, tem 7 dias para pedir o reembolso integral, sem precisar explicar. É o que a lei garante, e a gente cumpre.',
 }
@@ -270,7 +270,7 @@ export const faq = {
 export const fechamento = {
   titulo: 'Você já adiou esse dia outras vezes.',
   texto:
-    'É um sábado. Um. E do outro lado dele existe uma mulher que você não visita há muito tempo. São 130 lugares, e o seu ainda está aqui.',
+    'É um sábado. Um. E do outro lado dele existe uma mulher que você não visita há muito tempo. São 100 lugares, e o seu ainda está aqui.',
   tese: 'Uma mulher não precisa deixar de ser forte para viver a sua essência. Precisa aprender a direcionar a sua força.',
 }
 
