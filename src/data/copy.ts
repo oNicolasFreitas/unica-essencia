@@ -13,7 +13,7 @@ export const evento = {
   lugares: 130,
   prazo: '3 de outubro',
   precoMin: 'R$ 297',
-  parcelaMin: '12x de R$ 24,75',
+  parcelaMin: 'em até 12x',
 }
 
 export const cta = {
@@ -149,7 +149,7 @@ export const quemConduz = {
   legendaRetrato: 'Uma mulher de cada vez. É assim que ela trabalha há anos. Só que, desta vez, a sala é dela.',
   /* Texto da própria Liliany (site dela, 18/09/2026). */
   historia: [
-    'Meu nome é Liliany Gonçalves. Sou mulher, esposa, mãe e empresária, e a Única Essência nasceu de algo que fui percebendo na minha própria caminhada.',
+    'Meu nome é Liliany Gonçalves. Sou filha amada de Deus, mulher, esposa, mãe e empresária, e a Única Essência nasceu de algo que fui percebendo na minha própria caminhada.',
     'Depois de anos vivendo para dar conta de tudo, cheguei ao limite emocional. Foi ali que comecei uma jornada profunda de autoconhecimento e reconexão com a minha identidade, a minha feminilidade e a essência que Deus criou em mim.',
     'Hoje, com a minha família restaurada e uma trajetória sólida no empreendedorismo, ajudo outras mulheres a se reconectarem consigo mesmas e a viverem com mais clareza, propósito e verdade, sem precisar se perder para sustentar todos os seus papéis.',
   ],
@@ -176,7 +176,7 @@ export const ingressos = {
     nome: 'Única',
     frase: 'Para a mulher que passou a vida sendo atendida por último.',
     valor: 'R$ 597',
-    parcela: 'ou 12x de R$ 49,75',
+    parcela: 'ou em até 12x de R$ 61,74',
     itens: [
       'Mesa própria nas primeiras fileiras, mais perto do palco',
       'Seu nome na cadeira, esperando você chegar',
@@ -193,7 +193,7 @@ export const ingressos = {
     nome: 'Essencial',
     frase: 'O dia inteiro, do começo ao fim.',
     valor: 'R$ 297',
-    parcela: 'ou 12x de R$ 24,75',
+    parcela: 'ou em até 12x de R$ 30,72',
     itens: ['Cadeira reservada no auditório', 'Apostila da imersão', 'Todas as dinâmicas do dia', 'O presente de encerramento', 'Coffee incluso ao longo do dia'],
     cta: 'Quero o Essencial',
   },

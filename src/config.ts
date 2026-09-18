@@ -4,11 +4,11 @@
    comercial existirem. Nada mais precisa mudar no projeto.
    ═══════════════════════════════════════════════════════════ */
 export const CHECKOUT = {
-  essencial: '', // AVISO: placeholder — substituir por dado real (ex.: https://www.asaas.com/c/xxxxxxxx)
-  unica: '',     // AVISO: placeholder — substituir por dado real (ex.: https://www.asaas.com/c/yyyyyyyy)
+  essencial: 'https://www.sympla.com.br/evento/Unica-essencia/3585056',
+  unica: 'https://www.sympla.com.br/evento/Unica-essencia/3585056',
 }
 
-export const WHATSAPP = '' // AVISO: placeholder — substituir por dado real (ex.: 5547999999999)
+export const WHATSAPP = '5548933811009'
 
 const WHATSAPP_MSG = 'Quero tirar uma dúvida sobre a Única Essência.'
 
