@@ -23,7 +23,7 @@ export const cta = {
 
 export const hero = {
   promessa:
-    'Uma imersão de um sábado para a mulher que todo mundo procura quando precisa, e que não tem a quem procurar.',
+    'Uma imersão de um sábado inteiro para mulheres que decidiram parar, se ouvir e voltar para a mulher que existe por trás de todos os papéis que sustentam. Pela primeira vez, sem precisar ser forte por ninguém.',
   legendaFoto: 'Liliany Gonçalves',
 }
 
@@ -69,10 +69,10 @@ export const porQueEu = {
 }
 
 export const oDia = {
-  titulo: 'Três objetos. E o que você leva embora.',
+  titulo: 'O que você vai viver. E o que leva embora.',
   deck: 'Palestra você assiste. Imersão você atravessa.',
   intro:
-    'Não vamos contar como o dia acontece: parte da força está em atravessar sem saber o que vem, e a gente não vai tirar isso de você. Mas o que você leva embora, isso você tem o direito de saber antes de pagar.',
+    'Não vamos contar como o dia acontece: parte da força está em atravessar sem saber o que vem, e a gente não vai tirar isso de você. O que acontece lá dentro, só vivendo para saber. Mas o que você leva embora, isso você tem o direito de saber antes de pagar.',
   objetos: [
     {
       n: 'I',
@@ -98,6 +98,7 @@ export const oDia = {
   ],
   /* Absorvido de "O que fica": só os dois itens que não repetiam nada. */
   fica: [
+    { t: 'O nome do padrão que está governando as suas escolhas', d: 'Não uma sensação vaga de que alguma coisa está errada. O nome, dito em voz alta, dentro daquela sala.' },
     { t: 'Uma ferramenta de estados emocionais que você usa sozinha', d: 'Em casa, numa terça-feira ruim. A mesma que virou a chave na vida da Liliany antes de virar conteúdo.' },
     { t: 'A diferença entre sustentar e carregar', d: 'Entre sustentar as pessoas que você ama e carregar todas elas sozinha. Ninguém te ensinou isso. É a distinção que muda a sua segunda-feira.' },
   ],
@@ -252,7 +253,7 @@ export const faq = {
     },
     {
       q: 'O que devo levar?',
-      a: ['Só você. Apostila, caneta, coffee e o presente ficam por nossa conta. A única coisa que pedimos antes é a sua foto de criança, pelo grupo, depois da inscrição.'],
+      a: ['Só você. Apostila, caneta, coffee e o presente de encerramento ficam por nossa conta. O que mais precisar, a gente avisa no grupo depois da inscrição.'],
     },
     {
       q: 'Vai ter venda de alguma coisa no dia?',

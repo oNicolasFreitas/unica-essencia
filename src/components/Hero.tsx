@@ -26,7 +26,7 @@ export function Hero() {
 
         <div className="flex flex-col items-center gap-6 text-center md:items-start md:gap-8 md:text-left">
           <h1 className="enter enter-2 max-w-[20ch]">
-            Você é a mulher que resolve. E quem segura <span className="script">você?</span>
+            Você cuida de tudo. Quando foi a última vez que cuidou de <span className="script">você?</span>
           </h1>
           <p className="enter enter-3 max-w-[44ch] text-base text-cacau/80 md:text-lg">{hero.promessa}</p>
           <div className="enter enter-4 flex w-full flex-col items-center gap-3 md:w-auto md:flex-row md:flex-wrap md:gap-x-6 md:gap-y-4">
