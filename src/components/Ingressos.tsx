@@ -66,7 +66,7 @@ export function Ingressos() {
       </p>
       <div data-reveal className="mx-auto mt-8 grid max-w-3xl gap-4 rounded-[1.5rem] border border-vinho/15 p-6 text-sm text-cacau/80 sm:grid-cols-2 sm:gap-8">
         <div className="flex gap-3"><ShieldCheck strokeWidth={1.5} className="mt-0.5 h-5 w-5 shrink-0 text-vinho" aria-hidden /><p>{ingressos.garantia}</p></div>
-        <div className="flex gap-3"><MapPin strokeWidth={1.5} className="mt-0.5 h-5 w-5 shrink-0 text-vinho" aria-hidden /><p><strong className="font-medium text-vinho">{evento.endereco}</strong>, {evento.cidade} · {evento.uf}. Das 9h às 19h, com coffee incluso.</p></div>
+        <div className="flex gap-3"><MapPin strokeWidth={1.5} className="mt-0.5 h-5 w-5 shrink-0 text-vinho" aria-hidden /><p><strong className="font-medium text-vinho">{evento.endereco}</strong>, {evento.cidade} · {evento.uf}. {evento.credenciamento}, das 9h às 19h, com coffee incluso. Estacionamento na região.</p></div>
       </div>
 
     </Section>

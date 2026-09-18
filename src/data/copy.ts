@@ -6,6 +6,7 @@ export const evento = {
   data: 'Sábado, 10 de outubro',
   dataCurta: '10 de outubro',
   horario: 'Das 9h às 19h',
+  credenciamento: 'Credenciamento a partir das 8h',
   cidade: 'Balneário Camboriú',
   uf: 'SC',
   endereco: 'Rua Bahia, 414, Bairro dos Estados',
@@ -145,6 +146,13 @@ export const quemConduz = {
     ],
   },
   legendaRetrato: 'Uma mulher de cada vez. É assim que ela trabalha há anos. Só que, desta vez, a sala é dela.',
+  /* Texto da própria Liliany (site dela, 18/09/2026). */
+  historia: [
+    'Meu nome é Liliany Gonçalves. Sou mulher, esposa, mãe e empresária, e a Única Essência nasceu de algo que fui percebendo na minha própria caminhada.',
+    'Depois de anos vivendo para dar conta de tudo, cheguei ao limite emocional. Foi ali que comecei uma jornada profunda de autoconhecimento e reconexão com a minha identidade, a minha feminilidade e a essência que Deus criou em mim.',
+    'Hoje, com a minha família restaurada e uma trajetória sólida no empreendedorismo, ajudo outras mulheres a se reconectarem consigo mesmas e a viverem com mais clareza, propósito e verdade, sem precisar se perder para sustentar todos os seus papéis.',
+  ],
+  historiaFecho: 'Essa experiência é um convite para voltar para você.',
 }
 
 export const oEncontro = {
@@ -223,7 +231,7 @@ export const faq = {
     },
     {
       q: 'Onde vai ser?',
-      a: ['Rua Bahia, 414, Bairro dos Estados, Balneário Camboriú. As orientações do dia chegam no seu e-mail assim que a inscrição for confirmada.'],
+      a: ['Rua Bahia, 414, Bairro dos Estados, Balneário Camboriú. Credenciamento a partir das 8h, começo às 9h. O endereço fica a poucos minutos do centro e da Avenida Brasil; há estacionamento na região. As orientações completas chegam no seu e-mail assim que a inscrição for confirmada.'],
     },
     {
       q: 'Tem coffee? E almoço?',
@@ -233,6 +241,18 @@ export const faq = {
       q: 'Posso ir sozinha?',
       // AVISO: placeholder — substituir por dado real (Fase 0.9: "a maioria vem assim" e "saem acompanhadas" afirmam histórico de edições que não existe)
       a: ['Pode, e a maioria vem assim. A sala é conduzida de forma que ninguém fique de fora. Muitas mulheres que chegam sozinhas saem acompanhadas.'],
+    },
+    {
+      q: 'A Única Essência é terapia?',
+      a: ['Não. É uma imersão de um dia, com método e dinâmicas, e não substitui acompanhamento psicológico ou qualquer tratamento profissional. Se você faz terapia, ótimo: as duas coisas se somam.'],
+    },
+    {
+      q: 'Preciso ser empresária?',
+      a: ['Não. A Única Essência é para mulheres em diferentes momentos e áreas da vida. O que importa é ser a pessoa em quem todo mundo se apoia, e querer parar um dia para olhar para si.'],
+    },
+    {
+      q: 'O que devo levar?',
+      a: ['Só você. Apostila, caneta, coffee e o presente ficam por nossa conta. A única coisa que pedimos antes é a sua foto de criança, pelo grupo, depois da inscrição.'],
     },
     {
       q: 'Vai ter venda de alguma coisa no dia?',

@@ -13,10 +13,11 @@ export function QuemConduz() {
         <div className="flex flex-col items-center text-center md:items-start md:text-left">
           <h2 data-reveal className="max-w-[16ch]">{quemConduz.tituloSolo}</h2>
           <p data-reveal className="mt-6 max-w-[40ch] font-display text-lg font-light text-vinho md:text-xl">{porQueEu.destaque}</p>
-          <div data-reveal className="mt-8 w-full max-w-[48ch] border-l-2 border-vinho/30 pl-5 text-left">
-            {porQueEu.cena.map((p) => (
-              <p key={p} className="text-sm italic text-cacau/80 [&+p]:mt-2">{p}</p>
+          <div data-reveal className="mt-8 w-full max-w-[52ch] border-l-2 border-vinho/30 pl-5 text-left">
+            {quemConduz.historia.map((p) => (
+              <p key={p} className="text-sm text-cacau/85 [&+p]:mt-3">{p}</p>
             ))}
+            <p className="mt-3 text-sm font-medium text-vinho">{quemConduz.historiaFecho}</p>
             <p className="script mt-4 text-2xl text-ameixa">{porQueEu.assinatura}</p>
           </div>
           <div data-reveal className="mt-10 w-full max-w-[52ch] text-center md:text-left">
