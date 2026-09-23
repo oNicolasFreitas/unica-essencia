@@ -4,6 +4,14 @@ import { nav, cta, evento } from '../data/copy'
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [rolou, setRolou] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setRolou(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -19,8 +27,11 @@ export function Navbar() {
 
   return (
     <>
-      <header className={`fixed inset-x-0 top-0 ${open ? 'z-topo' : 'z-nav'} px-3 pt-3 sm:px-5 enter enter-1`}>
-        <nav aria-label="Principal" className="glass mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full pl-4 pr-2 sm:pl-5">
+      <header className={`fixed inset-x-0 top-0 ${open ? 'z-topo' : 'z-nav'} enter enter-1 px-3 transition-[padding] duration-500 ease-out sm:px-5 ${rolou ? 'pt-0 sm:pt-2' : 'pt-3'}`}>
+        <nav
+          aria-label="Principal"
+          className={`glass mx-auto flex max-w-6xl items-center justify-between rounded-full pl-4 pr-2 transition-[height,box-shadow] duration-500 ease-out sm:pl-5 ${rolou ? 'h-14 shadow-[0_10px_30px_-18px_rgba(90,39,49,0.5)]' : 'h-16'}`}
+        >
           <a href="#top" className="pressable flex items-center gap-3" aria-label="Única Essência, início">
             <img src="/img/logo.png" alt="" width={36} height={36} className="h-9 w-9 object-contain" />
             <span className="whitespace-nowrap font-display text-sm uppercase tracking-[0.2em] text-vinho pt-[3px]">Única Essência</span>

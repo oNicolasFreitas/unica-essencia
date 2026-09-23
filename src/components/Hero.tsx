@@ -1,5 +1,7 @@
+import { useRef } from 'react'
 import { evento, hero, cta } from '../data/copy'
 import { Button } from './ui'
+import { useParallax } from '../hooks/useReveal'
 
 /**
  * Hero editorial light: título em vinho sobre marfim à esquerda,
@@ -7,11 +9,13 @@ import { Button } from './ui'
  * vem primeiro, em 4:5, e o texto abaixo.
  */
 export function Hero() {
+  const foto = useRef<HTMLDivElement>(null)
+  useParallax(foto, 18)
   return (
     <section id="top" className="relative bg-marfim px-5 pb-12 pt-24 sm:px-8 md:pb-24 md:pt-32 lg:px-12">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-14 lg:gap-20">
-        <div className="enter enter-2 order-first md:order-last">
-          <div className="relative mx-auto aspect-[4/5] max-w-[420px] overflow-hidden rounded-[1.5rem] bg-nude md:mx-0 md:aspect-[4/5] md:max-w-none">
+        <div ref={foto} className="enter enter-2 order-first md:order-last">
+          <div className="moldura relative mx-auto aspect-[4/5] max-w-[420px] rounded-[1.5rem] bg-nude md:mx-0 md:aspect-[4/5] md:max-w-none">
             <img
               src="/img/hero.webp"
               alt="Retrato de Liliany Gonçalves"

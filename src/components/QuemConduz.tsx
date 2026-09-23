@@ -1,17 +1,21 @@
 import { quemConduz, porQueEu } from '../data/copy'
+import { useRef } from 'react'
 import { Section, Button } from './ui'
+import { useParallax } from '../hooks/useReveal'
 import { cta } from '../data/copy'
 
 /** Quem conduz: foto grande, a frase-chave da história da Liliany e as duas bios curtas. */
 export function QuemConduz() {
+  const foto = useRef<HTMLElement>(null)
+  useParallax(foto, 22)
   return (
     <Section id="quem-conduz" bg="blush">
       <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:items-center">
-        <figure data-clip className="mx-auto w-full max-w-[420px] overflow-hidden rounded-[1.5rem] md:max-w-none">
+        <figure ref={foto} data-clip className="moldura mx-auto w-full max-w-[420px] rounded-[1.5rem] md:max-w-none">
           <img src="/img/liliany-2.webp" alt="Retrato de Liliany Gonçalves de vestido vermelho" width={1000} height={1150} loading="lazy" className="aspect-[4/4.6] w-full object-cover" />
         </figure>
         <div className="flex flex-col items-center text-center md:items-start md:text-left">
-          <h2 data-reveal className="max-w-[16ch]">{quemConduz.tituloSolo}</h2>
+          <h2 data-reveal className="fio-titulo max-w-[16ch]">{quemConduz.tituloSolo}</h2>
           <p data-reveal className="mt-6 max-w-[40ch] font-display text-lg font-light text-vinho md:text-xl">{porQueEu.destaque}</p>
           <div data-reveal className="mt-8 w-full max-w-[52ch] border-l-2 border-vinho/30 pl-5 text-left">
             {quemConduz.historia.map((p) => (

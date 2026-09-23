@@ -19,7 +19,7 @@ export function Section({ id, bg = 'marfim', className = '', children, tight = f
 type BtnProps = AnchorHTMLAttributes<HTMLAnchorElement> & { variant?: 'vinho' | 'gold' | 'ghost' | 'marfim'; children: ReactNode; arrow?: boolean }
 
 export function Button({ variant = 'vinho', children, className = '', arrow = true, ...rest }: BtnProps) {
-  const base = 'group pressable inline-flex items-center justify-center gap-2 rounded-full px-7 min-h-[50px] font-body text-sm font-medium transition-colors duration-300 ease-out'
+  const base = 'group pressable btn-fill inline-flex items-center justify-center gap-2 rounded-full px-7 min-h-[50px] font-body text-sm font-medium transition-colors duration-300 ease-out'
   const styles: Record<NonNullable<BtnProps['variant']>, string> = {
     vinho: 'bg-vinho text-marfim hover:bg-ameixa',
     gold: 'bg-dourado text-cacau hover:bg-dourado/85',

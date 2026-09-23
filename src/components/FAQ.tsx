@@ -32,13 +32,13 @@ export function FAQ() {
     <Section id="perguntas" bg="nude" tight>
       <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
         <div className="flex flex-col items-center text-center md:items-start md:text-left">
-          <h2 data-reveal className="max-w-[12ch]">{faq.titulo}</h2>
+          <h2 data-reveal className="fio-titulo max-w-[12ch]">{faq.titulo}</h2>
           <div data-reveal id="duvida" className="mt-8 flex flex-col items-center scroll-mt-20 md:items-start">
             <p className="text-cacau/75">{faq.duvida}</p>
             <Button href={wa} variant="ghost" className="mt-4" data-whatsapp {...externalProps(wa)}>{cta.whatsapp}</Button>
           </div>
         </div>
-        <div className="border-b border-vinho/15">
+        <div className="risco border-b border-vinho/15">
           {faq.itens.map((it, i) => <Item key={it.q} i={i} q={it.q} a={it.a} open={open === i} onToggle={() => setOpen(open === i ? null : i)} />)}
         </div>
       </div>
@@ -50,7 +50,7 @@ export function Fechamento() {
   return (
     <Section id="fechamento">
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
-        <h2 data-reveal className="max-w-[14ch]">
+        <h2 data-reveal className="fio-titulo max-w-[14ch]">
           Você já adiou <span className="script whitespace-nowrap">esse dia</span> outras vezes.
         </h2>
         <p data-reveal className="max-w-[44ch] text-cacau/80">{fechamento.texto}</p>
