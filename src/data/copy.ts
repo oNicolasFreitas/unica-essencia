@@ -3,15 +3,15 @@
 
 export const evento = {
   nome: 'Única Essência',
-  data: 'Sábado, 10 de outubro',
-  dataCurta: '10 de outubro',
+  data: 'Sábado, 5 de dezembro',
+  dataCurta: '5 de dezembro',
   horario: 'Das 9h às 19h',
   credenciamento: 'Credenciamento a partir das 8h',
   cidade: 'Balneário Camboriú',
   uf: 'SC',
   endereco: 'Rua Bahia, 414, Bairro dos Estados',
   lugares: 100,
-  prazo: '3 de outubro',
+  prazo: '28 de novembro',
   precoMin: 'R$ 297',
   parcelaMin: 'em até 12x',
 }
@@ -157,12 +157,12 @@ export const quemConduz = {
 }
 
 export const oEncontro = {
-  titulo: 'As inscrições encerram em 3 de outubro.',
+  titulo: 'As inscrições encerram em 28 de novembro.',
   legenda: 'lugares. Nem um a mais.',
   p1: 'Não é estratégia de venda. É prazo de produção.',
-  p3: 'Depois de 3 de outubro pode até sobrar cadeira. Mas não sobra tempo de fazer o dia ser seu.',
+  p3: 'Depois de 28 de novembro pode até sobrar cadeira. Mas não sobra tempo de fazer o dia ser seu.',
   fatos: [
-    { k: 'Data', v: 'Sábado, 10 de outubro' },
+    { k: 'Data', v: 'Sábado, 5 de dezembro' },
     { k: 'Horário', v: 'Das 9h às 19h' },
     { k: 'Cidade', v: 'Balneário Camboriú · SC' },
     { k: 'Turma', v: '100 mulheres' },
@@ -217,14 +217,14 @@ export const faq = {
     {
       q: 'E se eu não puder ir depois de me inscrever?',
       a: [
-        'A sua vaga é sua para dar. Até 9 de outubro você indica outra mulher para ir no seu lugar e a gente troca o nome, sem custo nenhum e sem burocracia.',
+        'A sua vaga é sua para dar. Até 4 de dezembro você indica outra mulher para ir no seu lugar e a gente troca o nome, sem custo nenhum e sem burocracia.',
         // AVISO: placeholder — substituir por dado real (Fase 0.9: frase afirma histórico de edições que não existe)
         'É só mandar mensagem no nosso WhatsApp com o nome dela. Muitas vezes é assim que uma amiga acaba vivendo esse dia.',
       ],
     },
     {
       q: 'E se eu me arrepender depois de pagar?',
-      a: ['Você tem 7 dias depois da compra para pedir o reembolso integral, sem precisar explicar. Depois disso, a vaga continua sendo sua para dar: até 9 de outubro você indica outra mulher e a gente troca o nome.'],
+      a: ['Você tem 7 dias depois da compra para pedir o reembolso integral, sem precisar explicar. Depois disso, a vaga continua sendo sua para dar: até 4 de dezembro você indica outra mulher e a gente troca o nome.'],
     },
     {
       q: 'Preciso já ter feito algum trabalho de autoconhecimento?',
@@ -275,7 +275,7 @@ export const fechamento = {
 }
 
 export const rodape = {
-  linha1: 'Imersão presencial feminina · sábado, 10 de outubro de 2026 · Rua Bahia, 414, Bairro dos Estados, Balneário Camboriú, SC',
+  linha1: 'Imersão presencial feminina · sábado, 5 de dezembro de 2026 · Rua Bahia, 414, Bairro dos Estados, Balneário Camboriú, SC',
   linha2: 'Realização: Liliany Gonçalves',
 }
 
