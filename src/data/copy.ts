@@ -11,7 +11,7 @@ export const evento = {
   uf: 'SC',
   endereco: 'Rua Bahia, 414, Bairro dos Estados',
   lugares: 100,
-  prazo: '28 de novembro',
+  prazo: '2 de dezembro',
   precoMin: 'R$ 297',
   parcelaMin: 'em até 12x',
 }
@@ -157,10 +157,10 @@ export const quemConduz = {
 }
 
 export const oEncontro = {
-  titulo: 'As inscrições encerram em 28 de novembro.',
+  titulo: 'As inscrições encerram em 2 de dezembro.',
   legenda: 'lugares. Nem um a mais.',
   p1: 'Não é estratégia de venda. É prazo de produção.',
-  p3: 'Depois de 28 de novembro pode até sobrar cadeira. Mas não sobra tempo de fazer o dia ser seu.',
+  p3: 'Depois de 2 de dezembro pode até sobrar cadeira. Mas não sobra tempo de fazer o dia ser seu.',
   fatos: [
     { k: 'Data', v: 'Sábado, 5 de dezembro' },
     { k: 'Horário', v: 'Das 9h às 19h' },
