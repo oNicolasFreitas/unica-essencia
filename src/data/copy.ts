@@ -217,8 +217,7 @@ export const faq = {
       q: 'E se eu não puder ir depois de me inscrever?',
       a: [
         'A sua vaga é sua para dar. Até 4 de dezembro você indica outra mulher para ir no seu lugar e a gente troca o nome, sem custo nenhum e sem burocracia.',
-        // AVISO: placeholder — substituir por dado real (Fase 0.9: frase afirma histórico de edições que não existe)
-        'É só mandar mensagem no nosso WhatsApp com o nome dela. Muitas vezes é assim que uma amiga acaba vivendo esse dia.',
+        'É só mandar mensagem no nosso WhatsApp com o nome dela. Pode ser o dia que uma amiga estava precisando.',
       ],
     },
     {
@@ -239,8 +238,7 @@ export const faq = {
     },
     {
       q: 'Posso ir sozinha?',
-      // AVISO: placeholder — substituir por dado real (Fase 0.9: "a maioria vem assim" e "saem acompanhadas" afirmam histórico de edições que não existe)
-      a: ['Pode, e a maioria vem assim. A sala é conduzida de forma que ninguém fique de fora. Muitas mulheres que chegam sozinhas saem acompanhadas.'],
+      a: ['Pode. A sala é conduzida de forma que ninguém fique de fora: você não precisa conhecer ninguém para viver o dia inteiro.'],
     },
     {
       q: 'A Única Essência é terapia?',
