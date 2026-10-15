@@ -25,7 +25,7 @@ export function QuemConduz() {
             <p className="script mt-4 text-2xl text-ameixa">{porQueEu.assinatura}</p>
           </div>
           <div data-reveal className="mt-10 w-full max-w-[52ch] text-center md:text-left">
-            <p className="text-sm text-cacau/60">{quemConduz.liliany.papel}</p>
+            <p className="text-sm text-cacau/70">{quemConduz.liliany.papel}</p>
             <h3 className="mt-1 text-vinho">{quemConduz.liliany.nome}</h3>
             <p className="mt-3 text-sm text-cacau/80">{quemConduz.liliany.p[0]}</p>
             <p className="mt-3 text-sm text-cacau/80">{quemConduz.liliany.p[1]}</p>

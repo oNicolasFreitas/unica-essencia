@@ -86,7 +86,7 @@ export const oDia = {
       nome: 'A menina',
       olho: 'Depois da inscrição, a gente pede uma coisa só: uma foto sua de criança.',
       corpo: 'Escolher já faz parte. Não vai ser a mais bonita. Vai ser aquela em que dá para ver o que você queria da vida.',
-      fecho: 'Ela volta para as suas mãos no dia 10, com o seu nome.',
+      fecho: 'Ela volta para as suas mãos no dia 5, com o seu nome.',
     },
     {
       n: 'III',
@@ -254,14 +254,6 @@ export const faq = {
     {
       q: 'O que devo levar?',
       a: ['Só você. Apostila, caneta, coffee e o presente de encerramento ficam por nossa conta. O que mais precisar, a gente avisa no grupo depois da inscrição.'],
-    },
-    {
-      q: 'Vai ter venda de alguma coisa no dia?',
-      a: [
-        'Vai, no fim da tarde. E a gente prefere te dizer agora.',
-        'Quem quiser continuar com a Liliany depois do dia 10 vai ter um caminho, apresentado uma vez, sem pressão e sem sala fechada. Quem não quiser não perde absolutamente nada: o conteúdo inteiro acontece antes.',
-        'Você não precisa gastar mais um real para levar tudo o que veio buscar.',
-      ],
     },
   ],
   duvida: 'Então me pergunte antes.',

@@ -10,13 +10,13 @@ export function Espelho() {
       </blockquote>
       <div className="mx-auto mt-12 grid max-w-4xl gap-10 text-center md:mt-16 md:grid-cols-2 md:gap-12 md:text-left">
         <div data-reveal>
-          <p className="text-sm text-cacau/60">{espelho.visivel.titulo}</p>
+          <p className="text-sm text-cacau/70">{espelho.visivel.titulo}</p>
           <ul data-stagger className="mt-3 flex flex-col gap-2 font-display text-lg font-light text-cacau">
             {espelho.visivel.itens.map((t) => <li key={t}>{t}</li>)}
           </ul>
         </div>
         <div data-reveal>
-          <p className="text-sm text-cacau/60">{espelho.interno.titulo}</p>
+          <p className="text-sm text-cacau/70">{espelho.interno.titulo}</p>
           <ul data-stagger className="mt-3 flex flex-col gap-2 font-display text-lg font-normal text-vinho">
             {espelho.interno.itens.map((t) => <li key={t}>{t}</li>)}
           </ul>

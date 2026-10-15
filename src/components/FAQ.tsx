@@ -62,7 +62,7 @@ export function Fechamento() {
 
 export function Footer() {
   return (
-    <footer className="bg-marfim px-5 pb-28 pt-8 text-sm text-cacau/60 sm:px-8 md:pb-10 lg:px-12">
+    <footer className="bg-marfim px-5 pb-28 pt-8 text-sm text-cacau/70 sm:px-8 md:pb-10 lg:px-12">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 border-t border-vinho/15 pt-8 text-center md:flex-row md:items-center md:justify-between md:text-left">
         <div className="flex items-center gap-3">
           <img src="/img/logo.png" alt="" width={32} height={32} className="h-8 w-8 object-contain" />

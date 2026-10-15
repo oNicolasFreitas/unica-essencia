@@ -45,7 +45,7 @@ export function Ingressos() {
         </article>
 
         <article data-reveal className="card-lift flex flex-col gap-5 rounded-[1.5rem] border border-vinho/20 bg-marfim p-7 md:p-9">
-          <p className="text-xs text-cacau/60">Ingresso</p>
+          <p className="text-xs text-cacau/70">Ingresso</p>
           <div>
             <h3 className="font-display text-2xl font-light text-vinho">{e.nome}</h3>
             <p className="mt-1 text-sm text-ameixa">{e.frase}</p>
