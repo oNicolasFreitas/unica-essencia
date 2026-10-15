@@ -22,7 +22,7 @@ export function Ingressos() {
         </div>
         <div className="flex flex-col items-center md:items-start">
           <h2 data-reveal className="fio-titulo max-w-[18ch]">{oEncontro.titulo}</h2>
-          <p data-reveal className="mt-4 max-w-[52ch] text-cacau/75">{oEncontro.p1} {oEncontro.p3}</p>
+          <p data-reveal className="mt-4 max-w-[52ch] text-cacau/75">{oEncontro.p1}</p>
         </div>
       </div>
 
